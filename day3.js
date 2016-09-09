@@ -1,9 +1,23 @@
 const assert = require('assert');
 
 function stringToArray(str) {
+    var array = [];
+
+    for (var i = 0; i < str.length; i++ ) {
+        array.push(str[i]);
+    }
+    return array
 }
 
 function arrayToString(arr) {
+    var arrayToString = arr.join();
+
+    for (var i = 0; i < arrayToString.length; i++) {
+        if (arrayToString[i] == ',') {
+            arrayToString = arrayToString.replace(',', '');
+        }
+    }
+    return arrayToString
 }
 
 function removeVowelsFromStr(str) {
