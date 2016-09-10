@@ -3,7 +3,7 @@ const assert = require('assert');
 function stringToArray(str) {
     var array = [];
 
-    for (var i = 0; i < str.length; i++ ) {
+    for (var i = 0; i < str.length; i++) {
         array.push(str[i]);
     }
     return array
@@ -22,21 +22,32 @@ function arrayToString(arr) {
 
 function removeVowelsFromStr(str) {
     var string = str;
-    for (var i = 0; i < string.length; i++) {
 
-            string = string.replace('a','');
-            string = string.replace('e', '');
-            string = string.replace('i','');
-            string = string.replace('o', '');
-            string = string.replace('u','');
+    for (var i = 0; i < string.length; i++) {
+        if (string[i] === 'a' ||
+            string[i] === 'e' ||
+            string[i] === 'i' ||
+            string[i] === 'o' ||
+            string[i] === 'u') {
+            string = string.replace(string[i], '');
+
+        }
+
     }
+    // without a loop
+    // string = string.replace('a', '');
+    // string = string.replace('e', '');
+    // string = string.replace('i', '');
+    // string = string.replace('o', '');
+    // string = string.replace('u', '');
+
     return string
 }
 
 function removeVowelsFromArray(arr) {
     var arrToStr = arrayToString(arr);
-    var rmv =  removeVowelsFromStr(arrToStr);
-    return stringToArray(rmv)
+    var rmvVowel = removeVowelsFromStr(arrToStr);
+    return stringToArray(rmvVowel)
 }
 
 assert.deepEqual(stringToArray('test'), ['t', 'e', 's', 't']);
