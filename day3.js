@@ -23,23 +23,12 @@ function arrayToString(arr) {
 function removeVowelsFromStr(str) {
     var string = str;
 
-    for (var i = 0; i < string.length; i++) {
-        if (string[i] === 'a' ||
-            string[i] === 'e' ||
-            string[i] === 'i' ||
-            string[i] === 'o' ||
-            string[i] === 'u') {
-            string = string.replace(string[i], '');
 
-        }
-
-    }
-    // without a loop
-    // string = string.replace('a', '');
-    // string = string.replace('e', '');
-    // string = string.replace('i', '');
-    // string = string.replace('o', '');
-    // string = string.replace('u', '');
+    string = string.replace('a', '');
+    string = string.replace('e', '');
+    string = string.replace('i', '');
+    string = string.replace('o', '');
+    string = string.replace('u', '');
 
     return string
 }
@@ -55,11 +44,11 @@ assert.deepEqual(stringToArray('hallo'), ['h', 'a', 'l', 'l', 'o']);
 
 assert(arrayToString(['t', 'e', 's', 't']) === 'test');
 assert(arrayToString([]) === '');
-
+//
 assert(removeVowelsFromStr('testing') === 'tstng');
 assert(removeVowelsFromStr('tstng') === 'tstng');
 assert(removeVowelsFromStr('aoeui') === '');
-
+//
 assert.deepEqual(removeVowelsFromArray(['t', 'e', 'o']), ['t']);
 assert.deepEqual(removeVowelsFromArray(['a', 'i']), []);
 assert.deepEqual(removeVowelsFromArray(['t', 't']), ['t', 't']);
