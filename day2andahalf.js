@@ -1,29 +1,27 @@
 const assert = require('assert');
 
 function isBalanced(str) {
-
     var string = '';
-    for (var i =0; i < str.length; i++ ) {
+
+    for (var i = 0; i < str.length; i++) {
         if (str[i] === '(' || str[i] === ')') {
             string += str[i];
         }
     }
 
-    // for (var i = 0; i < arrayToString.length; i++) {
-    //     var patt = new RegExp('()');
-    //     if (patt in arrayToString) {
-    //         console.log('wekjfb')
-    //     }
-    //     if (res == true ) {
-    //
-    //
-    //     }
-    // }
+    while (string.match(/\(\)/)) {
+        string = string.replace(/\(\)/g, '');
+    }
+
+    if (string === '' || string === null) {
+        return true
+    }
+    return false
 
 
 }
 
-    assert(isBalanced('(a)(b)((c))') === true);
-// assert( isBalanced('(((b))') === false );
-// assert( isBalanced(')(()') === false );
-// assert( isBalanced('hello') === true );
+assert(isBalanced('(a)(b)((c))') === true);
+assert(isBalanced('(((b))') === false);
+assert(isBalanced(')(()') === false);
+assert(isBalanced('hello') === true);
