@@ -16,8 +16,8 @@ function isBalanced(str) {
     if (string === '' || string === null) {
         return true
     }
-    return false
 
+    return false
 
 }
 
