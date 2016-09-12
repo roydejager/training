@@ -21,16 +21,10 @@ function arrayToString(arr) {
 }
 
 function removeVowelsFromStr(str) {
-    var string = str;
+
+    return str.replace(/[aeiou]/g, '');
 
 
-    string = string.replace('a', '');
-    string = string.replace('e', '');
-    string = string.replace('i', '');
-    string = string.replace('o', '');
-    string = string.replace('u', '');
-
-    return string
 }
 
 function removeVowelsFromArray(arr) {
